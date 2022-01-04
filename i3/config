@@ -39,7 +39,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 #startup
 exec_always compton
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh --hack
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec --no-startup-id bash ~/.config/polybar/launch.sh --hack
 exec feh --no-startup-id  --bg-fill '/home/dhyoga/Pictures/WallpaperDog-20466523.jpg'
 exec_always i3-layouts
 
@@ -153,17 +154,19 @@ for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 5
 smart_gaps on
-set $i3l 3columns 0.66 0.5 2 left to workspace 1
-set $i3l companion 0.3 0.4 up to workspace 0
-set $i3l 2columns left to workspace 4
-assign [class=xfce4-terminal] 1
-assign [class=firefox] 2
-assign [class=thunar] 3
-assign [class=wps-office|code] 4
-assign [class=celluoid|rhythmbox|gimp|kdenlive] 5
-assign [class=lxappearance|gparted|kazam|synaptic] 6
-for_window [class=rhythmbox|Lxappearance|xfce4-terminal|gparted] floating enable
-for_window [class=firefox|gimp|kdenlive|celluoid] focus
+set $i3l autosplit to workspace 1
+set $i3l vstack to workspace 2
+set $i3l 3columns 0.66 0.5 2 left to workspace 3
+set $i3l 2columns right to workspace 4
+set $i3l companion 0.3 0.4 up to workspace 5
+assign [class=Lxappearance|GParted|Synaptic|Kazam] 0
+assign [class=Code|Gimp|kdenlive] 1
+assign [class=LibreWolf] 2
+assign [class=Thunar|celluloid|Rhythmbox] 3
+assign [class=wps] 4
+assign [class=Xfce4-terminal] 5
+for_window [class=Synaptic|Lxappearance|Gparted] floating enable
+for_window [class=LibreWolf|Gimp|kdenlive|celluloid|Rhythmbox] focus
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
