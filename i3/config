@@ -43,6 +43,7 @@ exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id bash ~/.config/polybar/launch.sh --hack
 exec feh --no-startup-id  --bg-fill '/home/dhyoga/Pictures/WallpaperDog-20466523.jpg'
 exec_always i3-layouts
+exec --no-startup-id xautolock -time 2 -locker ~/config/i3/matrixlock.py
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -53,9 +54,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
+# shortcut
 bindsym $mod+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
 bindsym $mod+d exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/hack/scripts/rofi/launcher.rasi
+bindsym $mod+Print exec xfce4-screenshooter
 
 # change focus
 bindsym $mod+Left focus left
@@ -159,8 +161,8 @@ set $i3l vstack to workspace 2
 set $i3l 3columns 0.66 0.5 2 left to workspace 3
 set $i3l 2columns right to workspace 4
 set $i3l companion 0.3 0.4 up to workspace 5
-assign [class=Lxappearance|GParted|Synaptic|Kazam] 0
-assign [class=Code|Gimp|kdenlive] 1
+assign [class=Lxappearance|GParted|Synaptic|Kazam|Grub-customizer] 0
+assign [class=Code|Gimp|kdenlive|StarUML] 1
 assign [class=LibreWolf] 2
 assign [class=Thunar|celluloid|Rhythmbox] 3
 assign [class=wps] 4
