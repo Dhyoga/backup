@@ -25,6 +25,7 @@ font pango:monospace 8
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+bindsym $mod+l exec /home/dhyoga/.config/i3/i3lock-solarized.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -43,6 +44,7 @@ exec_always i3-layouts
 exec_always picom --experimental-backends
 exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id bash ~/.config/polybar/launch.sh --hack
+#exec feh --bg-fill '/home/dhyoga/Pictures/Kings Dogma.jpg'
 exec feh --no-startup-id  --bg-fill '/home/dhyoga/Pictures/WallpaperDog-20466523.jpg'
 #exec feh --bg-fill '/home/dhyoga/Pictures/bianca-punishing-gray-raven-4k-wallpaper-3840x2160-97.jpg'
 exec --no-startup-id libinput-gestures-setup start
@@ -59,6 +61,7 @@ bindsym $mod+q kill
 # shortcut
 bindsym $mod+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
 bindsym $mod+d exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/hack/scripts/rofi/launcher.rasi
+bindsym Mod1+F4 exec /home/dhyoga/.config/polybar/hack/scripts/powermenu.sh
 bindsym $mod+Print exec scrot /home/dhyoga/Pictures/Screenshot.png
 bindsym $mod+b exec --no-startup-id ~/.config/rofi/bin/menu_network
 
@@ -166,7 +169,7 @@ set $i3l 3columns 0.66 0.5 2 left to workspace 3
 set $i3l 2columns right to workspace 4
 set $i3l companion 0.3 0.4 up to workspace 5
 assign [class=Lxappearance|GParted|Synaptic|Grub-customizer] 0
-assign [class=Code|Gimp|kdenlive|StarUML|NetBeans] 1
+assign [class=Code|Gimp|xed|StarUML|NetBeans] 1
 assign [class=librewolf|Google-chrome] 2
 assign [class=Thunar|celluloid|Audacious] 3
 assign [class=wps] 4
