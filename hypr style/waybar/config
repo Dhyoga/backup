@@ -71,7 +71,7 @@
         "format": "{icon}",
         "format-muted": "",
         "format-icons": {
-            "default": ["", ""]
+            "default": ["", "", "墳"]
         },
 	    "format-alt": "{percent}%",
         "on-click": "pavucontrol &"
@@ -92,7 +92,7 @@
       "format-charging": "<span font-family='Font Awesome 6 Free'></span>",
       "format-plugged": "ﮣ", 
 
-      "format-alt": "{icon} {capacity}%",
+      "format-alt": "{capacity}% ",
       "format-full": "ﮣ", 
       "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
